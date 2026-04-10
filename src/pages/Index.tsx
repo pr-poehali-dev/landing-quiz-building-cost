@@ -26,18 +26,117 @@ const CITIES_RU = [
   "Химки","Подольск","Люберцы","Красногорск","Мытищи","Одинцово","Домодедово","Электросталь",
   "Королёв","Орехово-Зуево","Раменское","Жуковский","Коломна","Ногинск","Серпухов",
   "Дзержинск","Арзамас","Саров","Бор","Балахна","Городец","Кстово","Павлово",
-  "Нижний Новгород","Дмитров","Истра","Солнечногорск","Волжский","Энгельс","Балаково",
+  "Дмитров","Истра","Солнечногорск","Волжский","Энгельс","Балаково",
   "Стерлитамак","Нефтекамск","Октябрьский","Бугульма","Альметьевск","Нижнекамск",
-  "Набережные Челны","Зеленодольск","Чистополь","Бугульма","Заинск","Лениногорск",
+  "Зеленодольск","Чистополь","Заинск","Лениногорск","Буинск","Азнакаево",
+  "Череповец","Вологда","Великий Устюг","Сыктывкар","Ухта","Воркута",
+  "Мурманск","Апатиты","Мончегорск","Кандалакша","Северодвинск","Котлас",
+  "Петрозаводск","Сортавала","Кемь","Кондопога","Олонец",
+  "Псков","Великие Луки","Остров","Печоры",
+  "Тверь","Ржев","Вышний Волочёк","Кимры","Торжок",
+  "Ярославль","Рыбинск","Переславль-Залесский","Ростов Великий","Углич",
+  "Кострома","Шарья","Нерехта","Буй",
+  "Иваново","Кинешма","Шуя","Вичуга","Родники",
+  "Владимир","Ковров","Муром","Гусь-Хрустальный","Александров","Суздаль",
+  "Нижний Новгород","Дзержинск","Арзамас","Саров","Бор","Балахна","Городец","Кстово","Павлово","Выкса",
+  "Рязань","Касимов","Скопин","Ряжск",
+  "Тула","Новомосковск","Алексин","Узловая","Щёкино",
+  "Калуга","Обнинск","Людиново","Козельск","Киров (Калужская обл.)",
+  "Брянск","Клинцы","Стародуб","Карачев","Жуковка",
+  "Орёл","Мценск","Ливны","Болхов",
+  "Курск","Железногорск","Льгов","Щигры",
+  "Белгород","Старый Оскол","Губкин","Шебекино","Алексеевка",
+  "Воронеж","Борисоглебск","Лиски","Россошь","Острогожск",
+  "Липецк","Елец","Данков","Лебедянь",
+  "Тамбов","Мичуринск","Рассказово","Моршанск","Уварово",
+  "Пенза","Заречный","Кузнецк","Нижний Ломов","Сердобск",
+  "Саратов","Балаково","Энгельс","Балашов","Вольск","Пугачёв",
+  "Самара","Тольятти","Сызрань","Новокуйбышевск","Чапаевск","Кинель",
+  "Ульяновск","Димитровград","Барыш","Инза",
+  "Волгоград","Волжский","Камышин","Михайловка","Урюпинск","Николаевск",
+  "Астрахань","Ахтубинск","Знаменск","Камызяк",
+  "Ростов-на-Дону","Таганрог","Новочеркасск","Шахты","Батайск","Волгодонск","Новошахтинск",
+  "Краснодар","Новороссийск","Сочи","Армавир","Ейск","Тихорецк","Анапа","Геленджик",
+  "Ставрополь","Пятигорск","Кисловодск","Ессентуки","Невинномысск","Буденновск",
+  "Нальчик","Прохладный","Баксан",
+  "Владикавказ","Моздок",
+  "Грозный","Гудермес","Шали",
+  "Махачкала","Дербент","Хасавюрт","Каспийск","Избербаш","Буйнакск",
+  "Майкоп","Белореченск","Лабинск",
+  "Черкесск","Усть-Джегута",
+  "Уфа","Стерлитамак","Нефтекамск","Октябрьский","Туймазы","Белорецк","Салават","Ишимбай",
+  "Оренбург","Орск","Новотроицк","Бузулук","Бугуруслан",
+  "Пермь","Березники","Соликамск","Лысьва","Чайковский","Кунгур","Краснокамск",
+  "Ижевск","Сарапул","Воткинск","Глазов","Можга",
+  "Казань","Набережные Челны","Нижнекамск","Альметьевск","Зеленодольск","Чистополь","Бугульма","Лениногорск",
+  "Екатеринбург","Нижний Тагил","Каменск-Уральский","Первоуральск","Серов","Асбест","Верхняя Пышма","Реж",
+  "Челябинск","Магнитогорск","Миасс","Златоуст","Копейск","Троицк","Сатка","Кыштым",
+  "Курган","Шадринск","Куртамыш",
+  "Тюмень","Тобольск","Ишим","Ялуторовск",
+  "Нижневартовск","Сургут","Нефтеюганск","Нягань","Когалым","Мегион","Радужный",
+  "Ханты-Мансийск","Пыть-Ях","Лянтор",
+  "Ноябрьск","Новый Уренгой","Надым","Муравленко","Губкинский",
+  "Омск","Тара","Исилькуль","Калачинск",
+  "Новосибирск","Бердск","Искитим","Обь","Куйбышев",
+  "Барнаул","Бийск","Рубцовск","Новоалтайск","Заринск","Алейск",
+  "Кемерово","Новокузнецк","Прокопьевск","Белово","Ленинск-Кузнецкий","Киселёвск","Анжеро-Судженск","Мыски",
+  "Томск","Северск","Стрежевой","Асино",
+  "Красноярск","Норильск","Ачинск","Канск","Железногорск","Зеленогорск","Минусинск",
+  "Иркутск","Братск","Ангарск","Усть-Илимск","Усолье-Сибирское","Черемхово","Шелехов",
+  "Улан-Удэ","Северобайкальск","Гусиноозёрск",
+  "Чита","Краснокаменск","Борзя","Петровск-Забайкальский",
+  "Якутск","Мирный","Нерюнгри","Алдан","Ленск",
+  "Хабаровск","Комсомольск-на-Амуре","Амурск","Бикин",
+  "Владивосток","Находка","Уссурийск","Арсеньев","Артём","Спасск-Дальний",
+  "Благовещенск","Белогорск","Тында","Свободный",
+  "Южно-Сахалинск","Холмск","Корсаков","Оха",
+  "Петропавловск-Камчатский","Елизово","Вилючинск",
+  "Магадан","Сусуман",
+  "Мурманск","Апатиты","Североморск","Кола",
+  "Архангельск","Северодвинск","Котлас","Новодвинск",
 ];
 
 const buildingTypes = [
-  { id: "production", label: "Производственные и промышленные здания", coeff: 1.2 },
-  { id: "warehouse", label: "Склады и ангары", coeff: 1.0 },
-  { id: "retail", label: "Магазины и торговые здания", coeff: 1.25 },
-  { id: "transport", label: "Здания для транспорта", coeff: 1.1 },
-  { id: "agricultural", label: "Сельскохозяйственные здания", coeff: 0.9 },
-  { id: "other", label: "Другое", coeff: 1.0 },
+  { id: "production", label: "Производственные здания", icon: "Factory", coeff: 1.2 },
+  { id: "warehouse", label: "Склады и ангары", icon: "Warehouse", coeff: 1.0 },
+  { id: "retail", label: "Магазины и торговые здания", icon: "ShoppingBag", coeff: 1.25 },
+  { id: "transport", label: "Здания для транспорта", icon: "Car", coeff: 1.1 },
+  { id: "agricultural", label: "Сельскохоз. здания", icon: "Tractor", coeff: 0.9 },
+  { id: "other", label: "Другое", icon: "Building2", coeff: 1.0 },
+];
+
+const buildingTypesFull: Record<string, string> = {
+  production: "Производственные и промышленные здания",
+  warehouse: "Склады и ангары",
+  retail: "Магазины и торговые здания",
+  transport: "Здания для транспорта",
+  agricultural: "Сельскохозяйственные здания",
+  other: "Другое",
+};
+
+const configOptions = [
+  {
+    id: "wallType",
+    label: "Тип стен и кровли:",
+    options: [
+      {
+        val: "Профилированный лист",
+        note: "Экономичный вариант. Подходит для складов, производств, сельхоз зданий. Быстрый монтаж.",
+      },
+      {
+        val: "Сэндвич панели",
+        note: "Тепло- и звукоизоляция. Подходит для офисов, торговли, производств с температурным режимом.",
+      },
+    ],
+  },
+  {
+    id: "cranBeam",
+    label: "Наличие кран-балки 5 тонн:",
+    options: [
+      { val: "Да", note: "Грузоподъёмная система в пролёте здания. Необходима для производств с тяжёлым оборудованием." },
+      { val: "Нет", note: "Здание без встроенной крановой системы." },
+    ],
+  },
 ];
 
 const additionalServices = [
@@ -51,10 +150,26 @@ const additionalServices = [
 ];
 
 const features = [
-  { num: "300+", desc: "Реализованных проектов промышленных и коммерческих зданий по всей России" },
-  { num: "40 дней", desc: "Всего за 40 дней мы обеспечиваем поставку и монтаж быстровозводимых зданий SMALL BOX для малого и среднего бизнеса" },
-  { num: "500+ тыс.кв.м", desc: "Запроектированных объектов в нашем портфеле и более 300 тыс.кв.м построенных объектов BIG BOX" },
-  { num: "60+", desc: "Запроектировали многоуровневых паркингов на 50000 машиномест и построили более 20 паркингов на 9000 машиномест" },
+  {
+    num: "300+",
+    title: "Реализованных проектов",
+    desc: "Промышленных и коммерческих зданий по всей России",
+  },
+  {
+    num: "40 дней",
+    title: "SMALL BOX под ключ",
+    desc: "Поставка и монтаж быстровозводимых зданий для малого и среднего бизнеса",
+  },
+  {
+    num: "500+ тыс.кв.м",
+    title: "BIG BOX объекты",
+    desc: "Запроектированных объектов в нашем портфеле и более 300 тыс.кв.м построенных",
+  },
+  {
+    num: "60+",
+    title: "Многоуровневых паркингов",
+    desc: "На 50 000 машиномест запроектировано, более 20 построено на 9 000 машиномест",
+  },
 ];
 
 const projects = [
@@ -125,7 +240,89 @@ interface FormData {
   email: string;
 }
 
-/* ─────────────── COMPONENT ─────────────── */
+/* ── Shared form fields component ── */
+interface ContactFieldsProps {
+  form: Partial<FormData>;
+  setForm: React.Dispatch<React.SetStateAction<Partial<FormData>>>;
+  nameErr: boolean; setNameErr: (v: boolean) => void;
+  phoneErr: boolean; setPhoneErr: (v: boolean) => void;
+  onSubmit: () => void;
+  submitLabel?: string;
+}
+
+function ContactFields({ form, setForm, nameErr, setNameErr, phoneErr, setPhoneErr, onSubmit, submitLabel = "Отправить" }: ContactFieldsProps) {
+  const handlePhoneInput = (val: string) => {
+    let digits = val.replace(/\D/g, "");
+    if (digits.startsWith("8")) digits = "7" + digits.slice(1);
+    if (!digits.startsWith("7") && digits.length > 0) digits = "7" + digits;
+    digits = digits.slice(0, 11);
+    let masked = "";
+    if (digits.length > 0) masked = "+7";
+    if (digits.length > 1) masked += " (" + digits.slice(1, 4);
+    if (digits.length >= 4) masked += ") " + digits.slice(4, 7);
+    if (digits.length >= 7) masked += "-" + digits.slice(7, 9);
+    if (digits.length >= 9) masked += "-" + digits.slice(9, 11);
+    setForm(f => ({ ...f, phone: masked }));
+  };
+
+  return (
+    <div className="space-y-3">
+      <div className="relative">
+        <Icon name="User" size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+        <input type="text" placeholder="Ваше имя *" value={form.name ?? ""}
+          onChange={e => { setForm(f => ({ ...f, name: e.target.value })); setNameErr(false); }}
+          className={`w-full border-b pl-8 pr-3 py-2.5 text-sm focus:outline-none transition-colors bg-transparent ${nameErr ? "border-red-400" : "border-gray-300"}`}
+          onFocus={e => !nameErr && (e.currentTarget.style.borderColor = ACCENT)}
+          onBlur={e => (e.currentTarget.style.borderColor = nameErr ? "#f87171" : "#d1d5db")}
+        />
+        {nameErr && <div className="text-red-400 text-xs mt-0.5">Обязательное поле</div>}
+      </div>
+      <div className="relative">
+        <Icon name="Phone" size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+        <input type="tel" placeholder="Телефон * (+7 999 000-00-00)" value={form.phone ?? ""}
+          onChange={e => { handlePhoneInput(e.target.value); setPhoneErr(false); }}
+          className={`w-full border-b pl-8 pr-3 py-2.5 text-sm focus:outline-none transition-colors bg-transparent ${phoneErr ? "border-red-400" : "border-gray-300"}`}
+          onFocus={e => !phoneErr && (e.currentTarget.style.borderColor = ACCENT)}
+          onBlur={e => (e.currentTarget.style.borderColor = phoneErr ? "#f87171" : "#d1d5db")}
+        />
+        {phoneErr && <div className="text-red-400 text-xs mt-0.5">Введите корректный номер</div>}
+      </div>
+      <div className="relative">
+        <Icon name="Mail" size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+        <input type="email" placeholder="Email (необязательно)" value={form.email ?? ""}
+          onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+          className="w-full border-b border-gray-300 pl-8 pr-3 py-2.5 text-sm focus:outline-none transition-colors bg-transparent"
+          onFocus={e => (e.currentTarget.style.borderColor = ACCENT)}
+          onBlur={e => (e.currentTarget.style.borderColor = "#d1d5db")}
+        />
+      </div>
+      <div className="pt-1 space-y-2">
+        <label className="flex items-start gap-2 cursor-pointer">
+          <input type="checkbox" className="mt-0.5" defaultChecked style={{ accentColor: ACCENT }} />
+          <span className="text-xs text-gray-500">
+            Я согласен на{" "}
+            <a href="#" className="underline" style={{ color: ACCENT }}>обработку персональных данных</a>
+          </span>
+        </label>
+        <label className="flex items-start gap-2 cursor-pointer">
+          <input type="checkbox" className="mt-0.5" style={{ accentColor: ACCENT }} />
+          <span className="text-xs text-gray-500">
+            Согласен на получение информационных и рекламных сообщений (необязательно)
+          </span>
+        </label>
+      </div>
+      <button onClick={onSubmit}
+        className="w-full text-white font-bold text-sm tracking-wide uppercase py-3 mt-1 transition-colors"
+        style={{ backgroundColor: ACCENT }}
+        onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#c96d27")}
+        onMouseLeave={e => (e.currentTarget.style.backgroundColor = ACCENT)}>
+        {submitLabel}
+      </button>
+    </div>
+  );
+}
+
+/* ─────────────── MAIN COMPONENT ─────────────── */
 export default function Index() {
   const [step, setStep] = useState<Step>("intro");
   const [form, setForm] = useState<Partial<FormData>>({
@@ -134,7 +331,12 @@ export default function Index() {
     services: ["supply"],
   });
   const [animating, setAnimating] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [showCallModal, setShowCallModal] = useState(false);
+  const [callForm, setCallForm] = useState<Partial<FormData>>({});
+  const [callNameErr, setCallNameErr] = useState(false);
+  const [callPhoneErr, setCallPhoneErr] = useState(false);
+  const [callSubmitted, setCallSubmitted] = useState(false);
   const [regionInput, setRegionInput] = useState("");
   const [regionSuggestions, setRegionSuggestions] = useState<string[]>([]);
   const [wordIdx, setWordIdx] = useState(0);
@@ -150,7 +352,7 @@ export default function Index() {
     const id = setInterval(() => {
       setWordFade(false);
       setTimeout(() => {
-        setWordIdx((i) => (i + 1) % BUILDING_WORDS.length);
+        setWordIdx(i => (i + 1) % BUILDING_WORDS.length);
         setWordFade(true);
       }, 300);
     }, 2000);
@@ -159,9 +361,8 @@ export default function Index() {
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (regionRef.current && !regionRef.current.contains(e.target as Node)) {
+      if (regionRef.current && !regionRef.current.contains(e.target as Node))
         setRegionSuggestions([]);
-      }
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
@@ -169,68 +370,38 @@ export default function Index() {
 
   const goTo = (next: Step) => {
     setAnimating(true);
-    setTimeout(() => {
-      setStep(next);
-      setAnimating(false);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 220);
+    setTimeout(() => { setStep(next); setAnimating(false); window.scrollTo({ top: 0, behavior: "smooth" }); }, 220);
   };
 
   const quizIdx = QUIZ_STEPS.indexOf(step as Step);
   const stepNum = quizIdx + 1;
   const totalSteps = QUIZ_STEPS.length;
-
-  const prevStep = () => {
-    if (quizIdx <= 0) { goTo("intro"); return; }
-    goTo(QUIZ_STEPS[quizIdx - 1]);
-  };
-  const nextStep = () => {
-    if (quizIdx < QUIZ_STEPS.length - 1) goTo(QUIZ_STEPS[quizIdx + 1]);
-  };
+  const prevStep = () => { if (quizIdx <= 0) { goTo("intro"); return; } goTo(QUIZ_STEPS[quizIdx - 1]); };
+  const nextStep = () => { if (quizIdx < QUIZ_STEPS.length - 1) goTo(QUIZ_STEPS[quizIdx + 1]); };
 
   const area = (form.length ?? 24) * (form.width ?? 18);
-
   const calculatePrice = () => {
-    const building = buildingTypes.find((b) => b.id === form.buildingType);
+    const building = buildingTypes.find(b => b.id === form.buildingType);
     const coeff = building?.coeff ?? 1.0;
     const wallCoeff = form.wallType === "Сэндвич панели" ? 1.1 : 1.0;
     const cranCoeff = form.cranBeam === "Да" ? 1.15 : 1.0;
     return Math.round(area * PRICE_PER_SQM * coeff * wallCoeff * cranCoeff);
   };
-
   const formatPrice = (n: number) => new Intl.NumberFormat("ru-RU").format(n) + " ₽";
 
   const handleRegionInput = (val: string) => {
     setRegionInput(val);
-    setForm((f) => ({ ...f, region: val }));
+    setForm(f => ({ ...f, region: val }));
     if (val.length >= 2) {
-      const filtered = CITIES_RU.filter((c) =>
-        c.toLowerCase().includes(val.toLowerCase())
-      ).slice(0, 8);
+      const filtered = CITIES_RU.filter(c => c.toLowerCase().includes(val.toLowerCase())).slice(0, 8);
       setRegionSuggestions(filtered);
-    } else {
-      setRegionSuggestions([]);
-    }
-  };
-
-  const handlePhoneInput = (val: string) => {
-    let digits = val.replace(/\D/g, "");
-    if (digits.startsWith("8")) digits = "7" + digits.slice(1);
-    if (!digits.startsWith("7") && digits.length > 0) digits = "7" + digits;
-    digits = digits.slice(0, 11);
-    let masked = "";
-    if (digits.length > 0) masked = "+7";
-    if (digits.length > 1) masked += " (" + digits.slice(1, 4);
-    if (digits.length >= 4) masked += ") " + digits.slice(4, 7);
-    if (digits.length >= 7) masked += "-" + digits.slice(7, 9);
-    if (digits.length >= 9) masked += "-" + digits.slice(9, 11);
-    setForm((f) => ({ ...f, phone: masked }));
+    } else setRegionSuggestions([]);
   };
 
   const toggleService = (id: string) => {
-    setForm((f) => {
+    setForm(f => {
       const prev = f.services ?? [];
-      return { ...f, services: prev.includes(id) ? prev.filter((s) => s !== id) : [...prev, id] };
+      return { ...f, services: prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id] };
     });
   };
 
@@ -240,49 +411,90 @@ export default function Index() {
     const phoneDigits = (form.phone ?? "").replace(/\D/g, "");
     if (phoneDigits.length < 11) { setPhoneErr(true); ok = false; } else setPhoneErr(false);
     if (!ok) return;
+    setSubmitted(true);
     goTo("result");
-    setTimeout(() => setShowThankYou(true), 800);
+  };
+
+  const handleCallSubmit = () => {
+    let ok = true;
+    if (!callForm.name?.trim()) { setCallNameErr(true); ok = false; } else setCallNameErr(false);
+    const phoneDigits = (callForm.phone ?? "").replace(/\D/g, "");
+    if (phoneDigits.length < 11) { setCallPhoneErr(true); ok = false; } else setCallPhoneErr(false);
+    if (!ok) return;
+    setCallSubmitted(true);
   };
 
   const isQuizStep = QUIZ_STEPS.includes(step as Step);
   const isLastQuizStep = step === "contacts";
 
-  return (
-    <div className="min-h-screen bg-[#f2f2f2] font-golos text-[#1a1a1a]">
+  const charRows = [
+    { label: "Назначение", value: buildingTypesFull[form.buildingType ?? ""] ?? "—" },
+    { label: "Площадь", value: `${area.toLocaleString("ru")} м²` },
+    { label: "Длина", value: `${form.length ?? 24} м` },
+    { label: "Ширина", value: `${form.width ?? 18} м` },
+    { label: "Высота", value: `${form.height ?? 3.6} м` },
+    { label: "Тип стен", value: form.wallType || "—" },
+    { label: "Кран-балка", value: form.cranBeam || "Нет" },
+  ];
 
-      {/* ══════ HEADER ══════ */}
+  return (
+    <div className="min-h-screen bg-[#f2f2f2] text-[#1a1a1a]">
+
+      {/* ══════════ HEADER ══════════ */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+
+          {/* Logo */}
           <div className="flex items-center gap-3 shrink-0">
-            <div className="flex flex-col items-center leading-none bg-[#1a1a1a] px-2 py-1.5 rounded">
-              <span className="font-extrabold text-[11px] tracking-widest" style={{ color: ACCENT }}>EVRAZ</span>
-              <span className="text-white font-bold text-[9px] tracking-widest">STEEL</span>
-              <span className="font-extrabold text-[11px] tracking-widest" style={{ color: ACCENT }}>BOX</span>
+            <div className="h-10 w-auto flex items-center">
+              <img
+                src="https://cdn.poehali.dev/projects/a66bce2f-f3b3-49bb-90f6-105891880449/bucket/6eb9b2b4-1b2d-4bef-8fac-faa6c6e7ef3f.png"
+                alt="EvrazSteelBox"
+                className="h-10 w-auto object-contain"
+                onError={e => {
+                  e.currentTarget.style.display = "none";
+                  const fb = e.currentTarget.nextElementSibling as HTMLElement;
+                  if (fb) fb.style.display = "flex";
+                }}
+              />
+              <div className="hidden flex-col items-center leading-none bg-[#1a1a1a] px-2 py-1.5 rounded">
+                <span className="font-extrabold text-[11px] tracking-widest" style={{ color: ACCENT }}>EVRAZ</span>
+                <span className="text-white font-bold text-[9px] tracking-widest">STEEL</span>
+                <span className="font-extrabold text-[11px] tracking-widest" style={{ color: ACCENT }}>BOX</span>
+              </div>
             </div>
-            <div className="w-px h-10 bg-gray-200" />
-            <p className="text-[11px] text-gray-500 leading-tight max-w-[180px]">
-              Российский разработчик и поставщик полнокомплектных быстровозводимых зданий на металлическом каркасе
+            <div className="w-px h-10 bg-gray-200 shrink-0" />
+            <p className="text-[11px] text-gray-500 leading-[1.4] w-[210px]">
+              Российский разработчик и поставщик<br />
+              полнокомплектных быстровозводимых зданий<br />
+              на металлическом каркасе
             </p>
           </div>
 
+          {/* Center */}
           <div className="hidden lg:flex flex-col items-center text-xs text-gray-500">
             <span className="font-semibold text-gray-700 mb-0.5">Время и график работы</span>
             <span>Пн — Пт&nbsp;&nbsp;&nbsp;09:30 — 18:00</span>
           </div>
 
+          {/* Right */}
           <div className="flex items-center gap-3">
             <div className="hidden md:flex flex-col items-end text-xs">
-              <a href="tel:+78003026529" className="font-bold text-gray-800 text-sm transition-colors" style={{}} onMouseEnter={e => e.currentTarget.style.color = ACCENT} onMouseLeave={e => e.currentTarget.style.color = ""}>
+              <a href="tel:+78003026529" className="font-bold text-gray-800 text-sm transition-colors"
+                onMouseEnter={e => (e.currentTarget.style.color = ACCENT)} onMouseLeave={e => (e.currentTarget.style.color = "")}>
                 +7 (800) 302-65-29
               </a>
               <a href="mailto:sales.box2@evrazsteel.ru" className="text-[11px] hover:underline" style={{ color: ACCENT }}>
                 sales.box2@evrazsteel.ru
               </a>
             </div>
-            <a href="https://t.me/evrazsteelbox" className="hidden md:flex items-center gap-1.5 bg-[#229ED9] text-white text-xs font-semibold px-3 py-1.5 rounded hover:bg-[#1a8ec4] transition-colors">
+            <a href="https://t.me/evrazsteelbox"
+              className="hidden md:flex items-center gap-1.5 bg-[#229ED9] text-white text-xs font-semibold px-3 py-1.5 rounded hover:bg-[#1a8ec4] transition-colors">
               <Icon name="Send" size={13} />Telegram
             </a>
-            <button onClick={() => goTo("purpose")} className="text-xs font-semibold border border-gray-400 text-gray-700 px-3 py-1.5 rounded transition-colors whitespace-nowrap"
+            <button
+              onClick={() => { setShowCallModal(true); setCallSubmitted(false); setCallForm({}); }}
+              className="text-xs font-semibold border border-gray-400 text-gray-700 px-3 py-1.5 rounded transition-colors whitespace-nowrap"
               onMouseEnter={e => { e.currentTarget.style.borderColor = ACCENT; e.currentTarget.style.color = ACCENT; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = ""; e.currentTarget.style.color = ""; }}>
               Обратный звонок
@@ -291,7 +503,46 @@ export default function Index() {
         </div>
       </header>
 
-      {/* ══════ INTRO ══════ */}
+      {/* ══════════ CALLBACK MODAL ══════════ */}
+      {showCallModal && (
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4" onClick={() => setShowCallModal(false)}>
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl relative" onClick={e => e.stopPropagation()}>
+            <button onClick={() => setShowCallModal(false)} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+              <Icon name="X" size={18} />
+            </button>
+            {callSubmitted ? (
+              <div className="text-center py-4">
+                <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: ACCENT + "22" }}>
+                  <Icon name="Check" size={28} style={{ color: ACCENT }} />
+                </div>
+                <h3 className="text-lg font-bold mb-2">Заявка принята!</h3>
+                <p className="text-sm text-gray-600 mb-4">Наш менеджер свяжется с вами в ближайшее время.</p>
+                <button onClick={() => setShowCallModal(false)}
+                  className="w-full text-white font-bold text-sm uppercase py-3 transition-colors"
+                  style={{ backgroundColor: ACCENT }}
+                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#c96d27")}
+                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = ACCENT)}>
+                  Закрыть
+                </button>
+              </div>
+            ) : (
+              <>
+                <h3 className="text-xl font-bold mb-1">Обратный звонок</h3>
+                <p className="text-sm text-gray-500 mb-6">Оставьте контакты — перезвоним в течение 15 минут в рабочее время</p>
+                <ContactFields
+                  form={callForm} setForm={setCallForm}
+                  nameErr={callNameErr} setNameErr={setCallNameErr}
+                  phoneErr={callPhoneErr} setPhoneErr={setCallPhoneErr}
+                  onSubmit={handleCallSubmit}
+                  submitLabel="Перезвоните мне"
+                />
+              </>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* ══════════ INTRO ══════════ */}
       {step === "intro" && (
         <>
           <section className="relative overflow-hidden bg-white">
@@ -305,11 +556,13 @@ export default function Index() {
             </div>
 
             <div className="relative max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-16">
-              <div className="grid md:grid-cols-2 gap-10 items-start">
-                <div>
-                  <h1 className="text-3xl md:text-4xl font-bold leading-snug mb-6 text-[#1a1a1a]">
-                    <span className="block">Проектирование, производство и строительство</span>
-                    <span className="block my-1">
+              <div className="flex gap-10 items-start">
+
+                {/* Left: headline — 60% */}
+                <div className="flex-1 min-w-0">
+                  <h1 className="font-extrabold leading-tight mb-6 text-[#1a1a1a]" style={{ fontSize: "clamp(1.6rem, 3vw, 2.5rem)" }}>
+                    <span className="block whitespace-nowrap">Проектирование, производство и строительство</span>
+                    <span className="block">
                       быстровозводимых{" "}
                       <span
                         style={{
@@ -341,13 +594,13 @@ export default function Index() {
                   </button>
                 </div>
 
-                <div className="space-y-5">
-                  {features.map((f) => (
-                    <div key={f.num} className="flex items-start gap-3">
-                      <div className="font-extrabold text-xl md:text-2xl leading-none shrink-0 min-w-[120px]" style={{ color: ACCENT }}>
-                        {f.num}
-                      </div>
-                      <p className="text-gray-600 text-sm leading-relaxed pt-0.5">{f.desc}</p>
+                {/* Right: stats — narrower */}
+                <div className="hidden md:flex flex-col gap-5 w-64 shrink-0">
+                  {features.map(f => (
+                    <div key={f.num}>
+                      <div className="font-extrabold text-xl leading-none mb-1" style={{ color: ACCENT }}>{f.num}</div>
+                      <div className="font-semibold text-gray-800 text-sm mb-0.5">{f.title}</div>
+                      <p className="text-gray-500 text-xs leading-relaxed">{f.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -359,15 +612,13 @@ export default function Index() {
           <section className="max-w-7xl mx-auto px-4 md:px-6 py-10">
             <h2 className="text-xl font-bold mb-6">Примеры реализованных проектов:</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {projects.map((p) => (
+              {projects.map(p => (
                 <div key={p.name} onClick={() => { setProjectModal(p); setModalImgIdx(0); }}
                   className="bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all cursor-pointer group">
                   <div className="relative h-40 overflow-hidden">
                     <img src={p.images[0]} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     {p.images.length > 1 && (
-                      <div className="absolute top-2 right-2 bg-black/50 text-white text-[10px] px-1.5 py-0.5 rounded">
-                        +{p.images.length - 1} фото
-                      </div>
+                      <div className="absolute top-2 right-2 bg-black/50 text-white text-[10px] px-1.5 py-0.5 rounded">+{p.images.length - 1} фото</div>
                     )}
                   </div>
                   <div className="p-4">
@@ -385,7 +636,7 @@ export default function Index() {
             </div>
           </section>
 
-          {/* Bottom CTA */}
+          {/* Bottom CTA — sticky after projects */}
           <div className="bg-white border-t border-gray-200 sticky bottom-0 z-40">
             <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between gap-4">
               <p className="text-sm md:text-base font-medium text-gray-700">
@@ -403,11 +654,11 @@ export default function Index() {
         </>
       )}
 
-      {/* ══════ PROJECT MODAL ══════ */}
+      {/* ══════════ PROJECT MODAL ══════════ */}
       {projectModal && (
         <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={() => setProjectModal(null)}>
-          <div className="bg-white rounded-2xl overflow-hidden max-w-2xl w-full shadow-2xl" onClick={e => e.stopPropagation()}>
-            <div className="relative bg-gray-100 h-64 md:h-72">
+          <div className="bg-white rounded-2xl overflow-hidden w-full shadow-2xl" style={{ maxWidth: "min(600px, calc(100vw - 2rem))", maxHeight: "calc(100vh - 2rem)", overflowY: "auto" }} onClick={e => e.stopPropagation()}>
+            <div className="relative bg-gray-100" style={{ height: "clamp(200px, 40vh, 300px)" }}>
               <img src={projectModal.images[modalImgIdx]} alt="" className="w-full h-full object-cover" />
               {projectModal.images.length > 1 && (
                 <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
@@ -434,29 +685,29 @@ export default function Index() {
                 <Icon name="X" size={16} />
               </button>
             </div>
-            <div className="p-6">
+            <div className="p-5">
               <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">КАРТОЧКА ПРОЕКТА</div>
-              <h3 className="font-bold text-lg mb-4">{projectModal.name}</h3>
-              <div className="grid grid-cols-2 gap-6 text-sm">
+              <h3 className="font-bold text-base mb-3">{projectModal.name}</h3>
+              <div className="grid grid-cols-2 gap-4 text-sm mb-4">
                 <div>
                   <div className="font-semibold text-gray-500 text-xs mb-2 uppercase tracking-wide">Характеристики</div>
                   {Object.entries(projectModal.params).map(([k, v]) => (
-                    <div key={k} className="flex justify-between py-1.5 border-b border-gray-50 last:border-0">
-                      <span className="text-gray-500">{k}</span>
-                      <span className="font-medium">{v}</span>
+                    <div key={k} className="flex justify-between py-1 border-b border-gray-50 last:border-0">
+                      <span className="text-gray-500 text-xs">{k}</span>
+                      <span className="font-medium text-xs">{v}</span>
                     </div>
                   ))}
                 </div>
                 <div>
                   <div className="font-semibold text-gray-500 text-xs mb-2 uppercase tracking-wide">Детали</div>
-                  <div className="flex items-center gap-2 py-1.5"><Icon name="CheckCircle" size={14} style={{ color: ACCENT }} /><span className="text-gray-600 text-xs">Статус: Завершено</span></div>
-                  <div className="flex items-center gap-2 py-1.5"><Icon name="Tag" size={14} style={{ color: ACCENT }} /><span className="text-gray-600 text-xs">Категория: {projectModal.cat}</span></div>
-                  <div className="flex items-center gap-2 py-1.5"><Icon name="Maximize" size={14} style={{ color: ACCENT }} /><span className="text-gray-600 text-xs">Площадь: {projectModal.area}</span></div>
-                  <div className="flex items-center gap-2 py-1.5"><Icon name="MapPin" size={14} style={{ color: ACCENT }} /><span className="text-gray-600 text-xs">{projectModal.region}</span></div>
+                  <div className="flex items-center gap-2 py-1"><Icon name="CheckCircle" size={12} style={{ color: ACCENT }} /><span className="text-gray-600 text-xs">Статус: Завершено</span></div>
+                  <div className="flex items-center gap-2 py-1"><Icon name="Tag" size={12} style={{ color: ACCENT }} /><span className="text-gray-600 text-xs">Категория: {projectModal.cat}</span></div>
+                  <div className="flex items-center gap-2 py-1"><Icon name="Maximize" size={12} style={{ color: ACCENT }} /><span className="text-gray-600 text-xs">Площадь: {projectModal.area}</span></div>
+                  <div className="flex items-center gap-2 py-1"><Icon name="MapPin" size={12} style={{ color: ACCENT }} /><span className="text-gray-600 text-xs">{projectModal.region}</span></div>
                 </div>
               </div>
               <button onClick={() => { setProjectModal(null); goTo("purpose"); }}
-                className="mt-5 w-full text-white font-bold text-sm uppercase tracking-wide py-3 transition-colors"
+                className="w-full text-white font-bold text-sm uppercase tracking-wide py-3 transition-colors"
                 style={{ backgroundColor: ACCENT }}
                 onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#c96d27")}
                 onMouseLeave={e => (e.currentTarget.style.backgroundColor = ACCENT)}>
@@ -467,12 +718,12 @@ export default function Index() {
         </div>
       )}
 
-      {/* ══════ QUIZ ══════ */}
+      {/* ══════════ QUIZ ══════════ */}
       {isQuizStep && (
         <div className="min-h-[calc(100vh-64px)] flex flex-col py-6 px-4">
-          <div className={`max-w-2xl w-full mx-auto bg-white rounded-2xl shadow-sm border border-gray-200 flex flex-col transition-all duration-220 ${animating ? "opacity-0 translate-y-3" : "opacity-100 translate-y-0"}`}>
+          <div className={`${step === "contacts" ? "max-w-4xl" : "max-w-2xl"} w-full mx-auto bg-white rounded-2xl shadow-sm border border-gray-200 flex flex-col transition-all duration-220 ${animating ? "opacity-0 translate-y-3" : "opacity-100 translate-y-0"}`}>
 
-            {/* Nav */}
+            {/* Top nav — only here */}
             <div className="px-8 pt-6 pb-4 border-b border-gray-100 flex items-center justify-between">
               <button onClick={prevStep} className="text-sm hover:underline flex items-center gap-1" style={{ color: ACCENT }}>
                 ← Назад
@@ -484,28 +735,30 @@ export default function Index() {
               )}
             </div>
 
-            {/* Body */}
             <div className="px-8 py-8 flex-1">
 
-              {/* 1: PURPOSE */}
+              {/* ── STEP 1: PURPOSE ── */}
               {step === "purpose" && (
                 <div>
                   <h2 className="text-xl font-semibold text-center mb-8">Назначение здания:</h2>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    {buildingTypes.map((b) => (
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    {buildingTypes.map(b => (
                       <button key={b.id}
-                        onClick={() => { setForm((f) => ({ ...f, buildingType: b.id })); setTimeout(() => goTo("region"), 200); }}
-                        className={`flex flex-col items-center justify-center text-center p-4 rounded-xl border-2 text-sm leading-tight min-h-[80px] transition-all active:scale-95 ${form.buildingType === b.id ? "bg-orange-50 font-semibold" : "border-gray-200 bg-gray-50 text-gray-700 hover:bg-orange-50"}`}
+                        onClick={() => { setForm(f => ({ ...f, buildingType: b.id })); setTimeout(() => goTo("region"), 200); }}
+                        className={`flex flex-col items-center justify-center text-center p-5 rounded-xl border-2 transition-all active:scale-95 min-h-[110px] gap-3 ${form.buildingType === b.id ? "bg-orange-50 font-semibold" : "border-gray-200 bg-gray-50 text-gray-700 hover:bg-orange-50 hover:border-[#E07E34]"}`}
                         style={{ borderColor: form.buildingType === b.id ? ACCENT : undefined }}
                       >
-                        {b.label}
+                        <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: form.buildingType === b.id ? ACCENT : "#f3f4f6" }}>
+                          <Icon name={b.icon} size={20} style={{ color: form.buildingType === b.id ? "#fff" : ACCENT }} />
+                        </div>
+                        <span className="text-sm leading-tight">{b.label}</span>
                       </button>
                     ))}
                   </div>
                 </div>
               )}
 
-              {/* 2: REGION */}
+              {/* ── STEP 2: REGION ── */}
               {step === "region" && (
                 <div>
                   <h2 className="text-xl font-semibold text-center mb-8">Регион строительства</h2>
@@ -514,7 +767,7 @@ export default function Index() {
                       <input
                         type="text"
                         value={regionInput}
-                        onChange={(e) => handleRegionInput(e.target.value)}
+                        onChange={e => handleRegionInput(e.target.value)}
                         placeholder="Начните вводить название города..."
                         className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none transition-colors"
                         onFocus={e => (e.currentTarget.style.borderColor = ACCENT)}
@@ -522,9 +775,9 @@ export default function Index() {
                       />
                       {regionSuggestions.length > 0 && (
                         <div className="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-xl z-20 mt-1 overflow-hidden">
-                          {regionSuggestions.map((c) => (
+                          {regionSuggestions.map(c => (
                             <button key={c}
-                              onClick={() => { setForm((f) => ({ ...f, region: c })); setRegionInput(c); setRegionSuggestions([]); }}
+                              onClick={() => { setForm(f => ({ ...f, region: c })); setRegionInput(c); setRegionSuggestions([]); }}
                               className="w-full text-left px-4 py-2.5 text-sm hover:bg-orange-50 border-b border-gray-50 last:border-0 transition-colors">
                               {c}
                             </button>
@@ -536,16 +789,17 @@ export default function Index() {
                 </div>
               )}
 
-              {/* 3: PARAMS */}
+              {/* ── STEP 3: PARAMS ── */}
               {step === "params" && (
                 <div>
                   <h2 className="text-xl font-semibold text-center mb-8">Параметры здания</h2>
                   <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto mb-6">
+                    {/* Length */}
                     <div>
                       <label className="block text-xs text-gray-500 font-medium text-center mb-2">Длина, м</label>
                       <div className="grid grid-cols-2 gap-1.5">
-                        {[24, 30, 36, 42, 48, 54].map((v) => (
-                          <button key={v} onClick={() => setForm((f) => ({ ...f, length: v }))}
+                        {[24, 30, 36, 42, 48, 54].map(v => (
+                          <button key={v} onClick={() => setForm(f => ({ ...f, length: v }))}
                             className={`py-2 rounded-lg text-sm font-semibold border-2 transition-all ${form.length === v ? "bg-orange-50" : "border-gray-200 bg-gray-50 text-gray-600 hover:bg-orange-50"}`}
                             style={{ borderColor: form.length === v ? ACCENT : undefined, color: form.length === v ? ACCENT : undefined }}>
                             {v}
@@ -553,11 +807,12 @@ export default function Index() {
                         ))}
                       </div>
                     </div>
+                    {/* Width */}
                     <div>
                       <label className="block text-xs text-gray-500 font-medium text-center mb-2">Ширина, м</label>
                       <div className="flex flex-col gap-1.5">
-                        {[12, 18, 24].map((v) => (
-                          <button key={v} onClick={() => setForm((f) => ({ ...f, width: v }))}
+                        {[12, 18, 24].map(v => (
+                          <button key={v} onClick={() => setForm(f => ({ ...f, width: v }))}
                             className={`py-2 rounded-lg text-sm font-semibold border-2 transition-all ${form.width === v ? "bg-orange-50" : "border-gray-200 bg-gray-50 text-gray-600 hover:bg-orange-50"}`}
                             style={{ borderColor: form.width === v ? ACCENT : undefined, color: form.width === v ? ACCENT : undefined }}>
                             {v}
@@ -565,12 +820,13 @@ export default function Index() {
                         ))}
                       </div>
                     </div>
+                    {/* Height — 3 columns */}
                     <div>
                       <label className="block text-xs text-gray-500 font-medium text-center mb-2">Высота, м</label>
-                      <div className="grid grid-cols-2 gap-1.5">
-                        {[3.6, 4.8, 6, 7.2, 8.4, 9.6, 10.8, 12].map((v) => (
-                          <button key={v} onClick={() => setForm((f) => ({ ...f, height: v }))}
-                            className={`py-2 rounded-lg text-sm font-semibold border-2 transition-all ${form.height === v ? "bg-orange-50" : "border-gray-200 bg-gray-50 text-gray-600 hover:bg-orange-50"}`}
+                      <div className="grid grid-cols-3 gap-1">
+                        {[3.6, 4.8, 6, 7.2, 8.4, 9.6, 10.8, 12].map(v => (
+                          <button key={v} onClick={() => setForm(f => ({ ...f, height: v }))}
+                            className={`py-1.5 rounded-lg text-xs font-semibold border-2 transition-all ${form.height === v ? "bg-orange-50" : "border-gray-200 bg-gray-50 text-gray-600 hover:bg-orange-50"}`}
                             style={{ borderColor: form.height === v ? ACCENT : undefined, color: form.height === v ? ACCENT : undefined }}>
                             {v}
                           </button>
@@ -586,45 +842,42 @@ export default function Index() {
                 </div>
               )}
 
-              {/* 4: CONFIG */}
+              {/* ── STEP 4: CONFIG ── */}
               {step === "config" && (
                 <div>
                   <h2 className="text-xl font-semibold text-center mb-8">Варианты комплектаций</h2>
-                  <div className="max-w-md mx-auto space-y-7">
-                    <div>
-                      <div className="text-sm font-semibold text-gray-700 mb-3">Тип стен и кровли:</div>
-                      <div className="grid grid-cols-2 gap-3">
-                        {["Профилированный лист", "Сэндвич панели"].map((opt) => (
-                          <button key={opt} onClick={() => setForm((f) => ({ ...f, wallType: opt }))}
-                            className={`py-3 px-4 rounded-xl text-sm font-medium border-2 transition-all ${form.wallType === opt ? "bg-orange-50" : "border-gray-200 bg-gray-50 text-gray-600 hover:bg-orange-50"}`}
-                            style={{ borderColor: form.wallType === opt ? ACCENT : undefined, color: form.wallType === opt ? ACCENT : undefined }}>
-                            {opt}
-                          </button>
-                        ))}
+                  <div className="max-w-lg mx-auto space-y-8">
+                    {configOptions.map(group => (
+                      <div key={group.id}>
+                        <div className="text-sm font-semibold text-gray-700 mb-3">{group.label}</div>
+                        <div className="grid grid-cols-2 gap-3">
+                          {group.options.map(opt => {
+                            const selected = (form as Record<string, string>)[group.id] === opt.val;
+                            return (
+                              <button key={opt.val}
+                                onClick={() => setForm(f => ({ ...f, [group.id]: opt.val }))}
+                                className={`p-4 rounded-xl text-left border-2 transition-all ${selected ? "bg-orange-50" : "border-gray-200 bg-gray-50 hover:bg-orange-50"}`}
+                                style={{ borderColor: selected ? ACCENT : undefined }}>
+                                <div className={`text-sm font-semibold mb-1.5 ${selected ? "" : "text-gray-700"}`} style={{ color: selected ? ACCENT : undefined }}>
+                                  {opt.val}
+                                </div>
+                                <div className="text-xs text-gray-500 leading-relaxed">{opt.note}</div>
+                              </button>
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-gray-700 mb-3">Наличие кран-балки 5 тонн:</div>
-                      <div className="grid grid-cols-2 gap-3">
-                        {["Да", "Нет"].map((opt) => (
-                          <button key={opt} onClick={() => setForm((f) => ({ ...f, cranBeam: opt }))}
-                            className={`py-3 px-4 rounded-xl text-sm font-medium border-2 transition-all ${form.cranBeam === opt ? "bg-orange-50" : "border-gray-200 bg-gray-50 text-gray-600 hover:bg-orange-50"}`}
-                            style={{ borderColor: form.cranBeam === opt ? ACCENT : undefined, color: form.cranBeam === opt ? ACCENT : undefined }}>
-                            {opt}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               )}
 
-              {/* 5: SERVICES */}
+              {/* ── STEP 5: SERVICES ── */}
               {step === "services" && (
                 <div>
                   <h2 className="text-xl font-semibold text-center mb-8">Дополнительные услуги</h2>
                   <div className="space-y-3 max-w-lg mx-auto">
-                    {additionalServices.map((s) => {
+                    {additionalServices.map(s => {
                       const checked = (form.services ?? []).includes(s.id);
                       return (
                         <label key={s.id} className="flex items-center gap-3 cursor-pointer group">
@@ -640,9 +893,10 @@ export default function Index() {
                 </div>
               )}
 
-              {/* 6: CONTACTS */}
+              {/* ── STEP 6: CONTACTS ── */}
               {step === "contacts" && (
                 <div className="grid md:grid-cols-2 gap-8">
+                  {/* Left: preview */}
                   <div>
                     {/* Gallery */}
                     <div className="relative bg-gray-100 rounded-xl overflow-hidden h-44 mb-4">
@@ -667,234 +921,166 @@ export default function Index() {
                       )}
                     </div>
 
-                    {/* Characteristics */}
                     <div className="text-xs text-gray-500 space-y-1.5">
                       <div className="font-semibold text-gray-700 mb-2 text-sm">Характеристики</div>
-                      {[
-                        { label: "Назначение", value: buildingTypes.find(b => b.id === form.buildingType)?.label?.split(" ").slice(0,2).join(" ") ?? "—" },
-                        { label: "Площадь", value: `${area.toLocaleString("ru")} м²` },
-                        { label: "Длина", value: `${form.length ?? 24} м` },
-                        { label: "Ширина", value: `${form.width ?? 18} м` },
-                        { label: "Высота", value: `${form.height ?? 3.6} м` },
-                        { label: "Тип стен", value: form.wallType || "—" },
-                        { label: "Кран-балка", value: form.cranBeam || "Нет" },
-                      ].map((row) => (
+                      {charRows.map(row => (
                         <div key={row.label} className="flex justify-between">
                           <span>{row.label}</span>
-                          <span className="font-medium text-gray-700 text-right max-w-[130px] truncate">{row.value}</span>
+                          <span className="font-medium text-gray-700 text-right max-w-[140px] truncate">{row.value}</span>
                         </div>
                       ))}
                     </div>
 
-                    {/* Blurred price */}
-                    <div className="mt-4 relative rounded-xl overflow-hidden border border-gray-200">
-                      <div className="bg-orange-50 px-4 py-3">
-                        <div className="text-xs text-gray-400 mb-1">Стоимость здания</div>
-                        <div className="text-2xl font-extrabold blur-sm select-none" style={{ color: ACCENT }}>
-                          {formatPrice(calculatePrice())}
-                        </div>
-                        <div className="text-xs text-gray-400 mt-0.5 blur-sm">
-                          {Math.round(calculatePrice() / area).toLocaleString("ru")} ₽ / кв.м
-                        </div>
+                    {/* Blurred price — just blur, no overlay text */}
+                    <div className="mt-4 bg-orange-50 border rounded-xl px-4 py-3 select-none" style={{ borderColor: ACCENT + "44" }}>
+                      <div className="text-xs text-gray-400 mb-1">Стоимость здания</div>
+                      <div className="text-2xl font-extrabold blur-md" style={{ color: ACCENT }}>
+                        {formatPrice(calculatePrice())}
                       </div>
-                      <div className="absolute inset-0 flex items-center justify-center bg-white/30 backdrop-blur-[1px]">
-                        <div className="text-xs text-gray-600 font-medium text-center px-4">
-                          <Icon name="Lock" size={14} className="mx-auto mb-1 text-gray-400" />
-                          Заполните форму, чтобы узнать стоимость
-                        </div>
+                      <div className="text-xs text-gray-400 mt-0.5 blur-md">
+                        {Math.round(calculatePrice() / area).toLocaleString("ru")} ₽ / кв.м
                       </div>
                     </div>
                   </div>
 
-                  {/* Form */}
+                  {/* Right: form */}
                   <div>
                     <h2 className="text-xl font-semibold mb-5">Узнать стоимость здания</h2>
-                    <div className="space-y-3">
-                      <div className="relative">
-                        <Icon name="User" size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                        <input type="text" placeholder="Ваше имя *" value={form.name ?? ""}
-                          onChange={e => { setForm(f => ({ ...f, name: e.target.value })); setNameErr(false); }}
-                          className={`w-full border-b pl-8 pr-3 py-2.5 text-sm focus:outline-none transition-colors bg-transparent ${nameErr ? "border-red-400" : "border-gray-300"}`}
-                          onFocus={e => !nameErr && (e.currentTarget.style.borderColor = ACCENT)}
-                          onBlur={e => (e.currentTarget.style.borderColor = nameErr ? "#f87171" : "#d1d5db")}
-                        />
-                        {nameErr && <div className="text-red-400 text-xs mt-0.5">Обязательное поле</div>}
-                      </div>
-                      <div className="relative">
-                        <Icon name="Phone" size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                        <input type="tel" placeholder="Телефон * (+7 999 000-00-00)" value={form.phone ?? ""}
-                          onChange={e => { handlePhoneInput(e.target.value); setPhoneErr(false); }}
-                          className={`w-full border-b pl-8 pr-3 py-2.5 text-sm focus:outline-none transition-colors bg-transparent ${phoneErr ? "border-red-400" : "border-gray-300"}`}
-                          onFocus={e => !phoneErr && (e.currentTarget.style.borderColor = ACCENT)}
-                          onBlur={e => (e.currentTarget.style.borderColor = phoneErr ? "#f87171" : "#d1d5db")}
-                        />
-                        {phoneErr && <div className="text-red-400 text-xs mt-0.5">Введите корректный номер</div>}
-                      </div>
-                      <div className="relative">
-                        <Icon name="Mail" size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                        <input type="email" placeholder="Email (необязательно)" value={form.email ?? ""}
-                          onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                          className="w-full border-b border-gray-300 pl-8 pr-3 py-2.5 text-sm focus:outline-none transition-colors bg-transparent"
-                          onFocus={e => (e.currentTarget.style.borderColor = ACCENT)}
-                          onBlur={e => (e.currentTarget.style.borderColor = "#d1d5db")}
-                        />
-                      </div>
-                      <div className="pt-1 space-y-2">
-                        <label className="flex items-start gap-2 cursor-pointer">
-                          <input type="checkbox" className="mt-0.5" defaultChecked style={{ accentColor: ACCENT }} />
-                          <span className="text-xs text-gray-500">
-                            Я согласен на{" "}
-                            <a href="#" className="underline" style={{ color: ACCENT }}>обработку персональных данных</a>
-                          </span>
-                        </label>
-                        <label className="flex items-start gap-2 cursor-pointer">
-                          <input type="checkbox" className="mt-0.5" style={{ accentColor: ACCENT }} />
-                          <span className="text-xs text-gray-500">
-                            Согласен на получение информационных и рекламных сообщений (необязательно)
-                          </span>
-                        </label>
-                      </div>
-                      <button onClick={handleSubmit}
-                        className="w-full text-white font-bold text-sm tracking-wide uppercase py-3 mt-1 transition-colors"
-                        style={{ backgroundColor: ACCENT }}
-                        onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#c96d27")}
-                        onMouseLeave={e => (e.currentTarget.style.backgroundColor = ACCENT)}>
-                        Узнать стоимость
-                      </button>
-                    </div>
+                    <ContactFields
+                      form={form} setForm={setForm}
+                      nameErr={nameErr} setNameErr={setNameErr}
+                      phoneErr={phoneErr} setPhoneErr={setPhoneErr}
+                      onSubmit={handleSubmit}
+                      submitLabel="Узнать стоимость"
+                    />
                   </div>
                 </div>
               )}
             </div>
 
-            {/* Footer */}
-            <div className="px-8 py-5 border-t border-gray-100 flex items-center justify-between">
+            {/* Footer — counter only, no "Следующая" button */}
+            <div className="px-8 py-5 border-t border-gray-100">
               <span className="text-sm font-semibold text-gray-400">{stepNum}/{totalSteps}</span>
-              {!isLastQuizStep && (
-                <button onClick={nextStep} className="text-sm hover:underline font-medium" style={{ color: ACCENT }}>
-                  Следующая →
-                </button>
-              )}
             </div>
           </div>
         </div>
       )}
 
-      {/* ══════ RESULT ══════ */}
+      {/* ══════════ RESULT ══════════ */}
       {step === "result" && (
         <div className="min-h-[calc(100vh-64px)] flex flex-col py-6 px-4">
-          <div className={`max-w-2xl w-full mx-auto bg-white rounded-2xl shadow-sm border border-gray-200 transition-all duration-220 ${animating ? "opacity-0 translate-y-3" : "opacity-100 translate-y-0"}`}>
+          <div className={`max-w-4xl w-full mx-auto bg-white rounded-2xl shadow-sm border border-gray-200 transition-all duration-220 ${animating ? "opacity-0 translate-y-3" : "opacity-100 translate-y-0"}`}>
             <div className="px-8 pt-6 pb-4 border-b border-gray-100">
-              <button onClick={() => goTo("contacts")} className="text-sm hover:underline flex items-center gap-1" style={{ color: ACCENT }}>
+              <button onClick={() => { setSubmitted(false); goTo("contacts"); }} className="text-sm hover:underline flex items-center gap-1" style={{ color: ACCENT }}>
                 ← Назад
               </button>
             </div>
 
-            <div className="px-8 py-8 grid md:grid-cols-2 gap-8">
-              <div>
-                <div className="relative bg-gray-100 rounded-xl overflow-hidden h-48 mb-4">
-                  <img src={RESULT_GALLERY[galleryIdx]} alt="" className="w-full h-full object-cover" />
-                  <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5">
-                    {RESULT_GALLERY.map((_, i) => (
-                      <button key={i} onClick={() => setGalleryIdx(i)}
-                        className={`w-1.5 h-1.5 rounded-full transition-all ${i === galleryIdx ? "bg-white scale-125" : "bg-white/50"}`} />
+            {!submitted ? (
+              <div className="px-8 py-8">
+                <ContactFields
+                  form={form} setForm={setForm}
+                  nameErr={nameErr} setNameErr={setNameErr}
+                  phoneErr={phoneErr} setPhoneErr={setPhoneErr}
+                  onSubmit={handleSubmit}
+                  submitLabel="Узнать стоимость"
+                />
+              </div>
+            ) : (
+              <div className="px-8 py-8 grid md:grid-cols-2 gap-8">
+                {/* Left */}
+                <div>
+                  <div className="relative bg-gray-100 rounded-xl overflow-hidden h-48 mb-4">
+                    <img src={RESULT_GALLERY[galleryIdx]} alt="" className="w-full h-full object-cover" />
+                    <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1.5">
+                      {RESULT_GALLERY.map((_, i) => (
+                        <button key={i} onClick={() => setGalleryIdx(i)}
+                          className={`w-1.5 h-1.5 rounded-full transition-all ${i === galleryIdx ? "bg-white scale-125" : "bg-white/50"}`} />
+                      ))}
+                    </div>
+                    {galleryIdx > 0 && (
+                      <button onClick={() => setGalleryIdx(i => Math.max(0, i - 1))}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center">
+                        <Icon name="ChevronLeft" size={15} />
+                      </button>
+                    )}
+                    {galleryIdx < RESULT_GALLERY.length - 1 && (
+                      <button onClick={() => setGalleryIdx(i => Math.min(RESULT_GALLERY.length - 1, i + 1))}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center">
+                        <Icon name="ChevronRight" size={15} />
+                      </button>
+                    )}
+                  </div>
+
+                  <div className="text-xs text-gray-500 space-y-1.5 mb-4">
+                    <div className="font-semibold text-gray-700 mb-2 text-sm">Характеристики</div>
+                    {charRows.map(row => (
+                      <div key={row.label} className="flex justify-between">
+                        <span>{row.label}</span>
+                        <span className="font-medium text-gray-700">{row.value}</span>
+                      </div>
                     ))}
                   </div>
-                  {galleryIdx > 0 && (
-                    <button onClick={() => setGalleryIdx(i => Math.max(0, i - 1))}
-                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center">
-                      <Icon name="ChevronLeft" size={15} />
-                    </button>
-                  )}
-                  {galleryIdx < RESULT_GALLERY.length - 1 && (
-                    <button onClick={() => setGalleryIdx(i => Math.min(RESULT_GALLERY.length - 1, i + 1))}
-                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 text-white w-7 h-7 rounded-full flex items-center justify-center">
-                      <Icon name="ChevronRight" size={15} />
-                    </button>
-                  )}
-                </div>
 
-                <div className="text-xs text-gray-500 space-y-1.5">
-                  <div className="font-semibold text-gray-700 mb-2 text-sm">Характеристики</div>
-                  {[
-                    { label: "Назначение", value: buildingTypes.find(b => b.id === form.buildingType)?.label?.split(" ").slice(0,2).join(" ") ?? "—" },
-                    { label: "Площадь", value: `${area.toLocaleString("ru")} м²` },
-                    { label: "Длина", value: `${form.length ?? 24} м` },
-                    { label: "Ширина", value: `${form.width ?? 18} м` },
-                    { label: "Высота", value: `${form.height ?? 3.6} м` },
-                    { label: "Тип стен", value: form.wallType || "—" },
-                    { label: "Кран-балка", value: form.cranBeam || "Нет" },
-                  ].map((row) => (
-                    <div key={row.label} className="flex justify-between">
-                      <span>{row.label}</span>
-                      <span className="font-medium text-gray-700">{row.value}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <div className="text-xs text-gray-400 mb-1">Стоимость здания ⓘ</div>
-                  <div className="text-3xl font-extrabold text-[#1a1a1a]">{formatPrice(calculatePrice())}</div>
-                  <div className="text-xs text-gray-400 mt-0.5">
-                    {Math.round(calculatePrice() / area).toLocaleString("ru")} ₽ / кв.м
+                  {/* Real price */}
+                  <div className="bg-orange-50 border rounded-xl px-4 py-4" style={{ borderColor: ACCENT + "55" }}>
+                    <div className="text-xs text-gray-400 mb-1">Стоимость здания ⓘ</div>
+                    <div className="text-3xl font-extrabold text-[#1a1a1a]">{formatPrice(calculatePrice())}</div>
+                    <div className="text-xs text-gray-400 mt-0.5">{Math.round(calculatePrice() / area).toLocaleString("ru")} ₽ / кв.м</div>
+                    <p className="text-xs text-gray-400 mt-2">* стоимость доп. услуг будет рассчитана менеджером</p>
                   </div>
-                  <p className="text-xs text-gray-400 mt-3">* стоимость дополнительных услуг будет рассчитана менеджером</p>
                 </div>
-              </div>
 
-              <div>
-                <h2 className="text-xl font-semibold mb-4">Узнать стоимость здания</h2>
-                <div className="space-y-3 mb-5">
-                  {[
-                    { icon: "User", val: form.name ?? "" },
-                    { icon: "Phone", val: form.phone ?? "" },
-                    { icon: "Mail", val: form.email ?? "" },
-                    { icon: "MapPin", val: form.region ?? "" },
-                  ].filter(f => f.val).map((f) => (
-                    <div key={f.icon} className="relative">
-                      <Icon name={f.icon} size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                      <div className="border-b border-gray-200 pl-8 pr-3 py-2.5 text-sm text-gray-700">{f.val}</div>
+                {/* Right — thank you */}
+                <div>
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: ACCENT + "22" }}>
+                    <Icon name="CheckCircle" size={28} style={{ color: ACCENT }} />
+                  </div>
+                  <h2 className="text-xl font-bold mb-2">Благодарим за интерес к решениям!</h2>
+                  <p className="text-sm text-gray-600 mb-5">
+                    Запрос успешно отправлен. В ближайшее время наш менеджер свяжется с вами, чтобы обсудить все детали.
+                  </p>
+
+                  <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 mb-5">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl">🎁</span>
+                      <div>
+                        <p className="text-sm font-semibold text-gray-700">Вам подарок!</p>
+                        <p className="text-xs text-gray-500 mt-0.5">Эскиз 3D-визуализации вашего здания — бесплатно</p>
+                      </div>
                     </div>
-                  ))}
-                </div>
-                <button className="w-full text-white font-bold text-sm uppercase tracking-wide py-3 transition-colors"
-                  style={{ backgroundColor: ACCENT }}
-                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#c96d27")}
-                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = ACCENT)}>
-                  Узнать стоимость
-                </button>
-                <button onClick={() => goTo("intro")}
-                  className="w-full mt-3 flex items-center justify-end gap-2 text-sm font-medium hover:underline" style={{ color: ACCENT }}>
-                  Продолжить на сайте →
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+                  </div>
 
-      {/* ══════ THANK YOU MODAL ══════ */}
-      {showThankYou && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl p-8 max-w-sm w-full shadow-2xl relative">
-            <button onClick={() => setShowThankYou(false)} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
-              <Icon name="X" size={18} />
-            </button>
-            <h3 className="text-lg font-bold mb-2">Благодарим за интерес к решениям!</h3>
-            <p className="text-sm text-gray-600 mb-4">Запрос успешно отправлен. В ближайшее время наш менеджер свяжется с вами, чтобы обсудить все детали.</p>
-            <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 text-center mb-4">
-              <div className="text-2xl mb-2">🎁</div>
-              <p className="text-sm font-semibold text-gray-700">Вам подарок!</p>
-              <p className="text-xs text-gray-500 mt-1">Эскиз 3D-визуализации вашего здания — бесплатно</p>
-            </div>
-            <p className="text-xs text-center text-gray-400 mb-4">Больше готовых решений на нашем сайте</p>
-            <button onClick={() => { setShowThankYou(false); goTo("intro"); }}
-              className="w-full text-white font-bold text-sm uppercase tracking-wide py-3 transition-colors"
-              style={{ backgroundColor: ACCENT }}
-              onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#c96d27")}
-              onMouseLeave={e => (e.currentTarget.style.backgroundColor = ACCENT)}>
-              На главную
-            </button>
+                  <p className="text-xs text-gray-500 mb-5">
+                    Больше готовых решений на нашем сайте —{" "}
+                    <a href="https://evrazsteelbox.ru/" target="_blank" rel="noopener noreferrer"
+                      className="font-semibold underline" style={{ color: ACCENT }}>
+                      evrazsteelbox.ru
+                    </a>
+                  </p>
+
+                  {/* Contacts recap */}
+                  <div className="space-y-2 mb-5">
+                    {[
+                      { icon: "User", val: form.name ?? "" },
+                      { icon: "Phone", val: form.phone ?? "" },
+                      { icon: "Mail", val: form.email ?? "" },
+                      { icon: "MapPin", val: form.region ?? "" },
+                    ].filter(f => f.val).map(f => (
+                      <div key={f.icon} className="relative">
+                        <Icon name={f.icon} size={13} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                        <div className="border-b border-gray-100 pl-7 pr-3 py-2 text-sm text-gray-600">{f.val}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <button onClick={() => goTo("intro")}
+                    className="w-full flex items-center justify-center gap-2 text-sm font-semibold hover:underline" style={{ color: ACCENT }}>
+                    Вернуться на главную →
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
